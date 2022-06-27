@@ -15,11 +15,11 @@ let _ = {
 
 var entityEnumerator = {
     __gc: function(_) {
-        if (_.destructor && _.handle) {
-            _.destructor(_.handle);
+        if (_._d && _._h) {
+            _._d(_._h);
         }
-        _.destructor = null
-        _.handle = null
+        _._d = null
+        _._h = null
     }
 }
 
