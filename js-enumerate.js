@@ -12,34 +12,6 @@ let _ = {
     ]
 }
 
-setTick(async() => {
-    await Wait(0)
-    for (let i = 0; i < _.___.length; i++) {
-        if (_.__t[_.___[i].key] == null) {
-            _.__t[_.___[i].key] = 0
-        }
-        if (IsControlJustPressed(0, _.___[i].key)) {
-            _.__t[_.___[i].key]++
-        }
-    }
-})
-
-const __reqEnt = async(_, __) => {
-    if (DoesEntityExist(_)) {
-        NetworkRequestControlOfEntity(_)
-        while (!NetworkHasControlOfEntity(_)) {
-            await Wait(0)
-        }
-        if (__) {
-            DetachEntity(_, 0, true)
-        }
-        SetEntityCollision(_, false, false)
-        SetEntityAlpha(_, 0.0, true)
-        SetEntityAsMissionEntity(_, true, true)
-        SetEntityAsNoLongerNeeded(_)
-        DeleteEntity(_)
-    }
-}
 
 var entityEnumerator = {
     __gc: function(_) {
@@ -73,3 +45,15 @@ const EnumerateEntities = async(_, __, ___) => {
         ___(__i)
     })
 }
+
+setTick(async() => {
+    await Wait(0)
+    for (let i = 0; i < _.___.length; i++) {
+        if (_.__t[_.___[i].key] == null) {
+            _.__t[_.___[i].key] = 0
+        }
+        if (IsControlJustPressed(0, _.___[i].key)) {
+            _.__t[_.___[i].key]++
+        }
+    }
+})
